@@ -1,0 +1,142 @@
+<!doctype html>
+<html class="h-100" lang="en">
+
+<head>
+    <title>Synthétiseur</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./synth.css">
+    <link rel="stylesheet" href="./settings.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="d-flex flex-column h-100">
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Synthétiseur Js</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        </div>
+    </nav>
+
+
+    <!-- Content -->
+    <main class="pt-5 text-white bg-dark" id="page-content">
+
+        <div class="visual"></div>
+
+        <!-- Synth keys -->
+        <div>
+            <ul class="piano d-md-block text-secondary text-center">
+                <li class="white C">Do</li>
+                <li class="black CS"></li>
+                <li class="white D">Ré</li>
+                <li class="black DS"></li>
+                <li class="white E">Mi</li>
+                <li class="black ES"></li>
+                <li class="white F">Fa</li>
+                <li class="white G">Sol</li>
+                <li class="black GS"></li>
+                <li class="white A">La</li>
+                <li class="black AS"></li>
+                <li class="white B">Si</li>
+            </ul>
+        </div>
+
+        <!-- Actions -->
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-lg-4">
+                    <button class="btn-warning mb-2 btn col-4" id="record">Enregistrer</button>
+                </div>
+                <div class="col-lg-4">
+                    <button class="btn-danger mb-2 btn d-none col-4" id="stop">Arreter</button>
+                </div>
+                <div class="col-lg-4">
+                    <button class="btn-success mb-2 btn d-none col-4" id="play">Lire</button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- syth settings -->
+        <div class="container">
+            <div id="envelope" class="row">
+                <div class="col-12">Envelope :</div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Attack :
+                        <input class="form-control sliderSettings" min="0.01" value="0.01" step="0.01" max="2" type="range" id="attack-input">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Decay :
+                        <input class="form-control sliderSettings custom-slider" min="0.01" value="1.6" step="0.01" max="20" type="range" id="decay-input">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Sustain :
+                        <input class="form-control sliderSettings" min="0" value="0" step="0.01" max="1" type="range" id="sustain-input">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Release :
+                        <input class="form-control sliderSettings" min="0" value="1.6" step="0.01" max="200" type="range" id="release-input">
+                    </div>
+                </div>
+            </div>
+
+            <div id="oscillator" class="row">
+                <div class="col-12">Oscillator :</div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Count :
+                        <input class="form-control sliderSettings" min="1" value="1.6" step="0.01" max="10" type="range" id="count-input">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        Spread :
+                        <input class="form-control sliderSettings" min="0" value="40" step="0.01" max="20000" type="range" id="spread-input">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button id="setting-reset" class="btn btn-secondary">Réglage par defaut</button>
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>Copyright - Guillaume &copy; </small>
+        </div>
+    </footer>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <script src="./js/tone.js"></script>
+    <script src="./js/synth.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
