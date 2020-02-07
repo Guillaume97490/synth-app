@@ -101,3 +101,14 @@ ul li:last-child {
         opacity: 0;
     }
 }
+
+@media screen and (max-width: 640px) {
+    ul{
+        width: 94vw !important;
+        padding: 3em 0 0 0 !important;
+    }
+    ul .white{
+        width: 13.3vw !important;
+    }
+
+  }
