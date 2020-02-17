@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./css/synth.css">
     <link rel="stylesheet" href="./css/settings.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -30,11 +32,37 @@
     <!-- Content -->
     <main class="pt-5 text-white bg-dark" id="page-content">
 
-        <div class="visual"></div>
+        <!-- <div class="visual"></div> -->
 
+        
+       
         <!-- Synth keys -->
         <div>
-            <ul class="piano d-md-block text-secondary text-center">
+            
+            <div class="collapse my-0" id="collapseExample">
+                <div class="form-group">Envelope
+                    <div class="h200 d-flex">
+                        <div class="p-3 d-flex flex-column text-center">A
+                            <input id="attack-input" class="sliderSettings" type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="0.01" data-slider-orientation="vertical"/>
+                        </div>
+                        <div class="p-3 d-flex flex-column text-center">D
+                            <input id="v-decay" type="text" data-slider-min="0.01" data-slider-max="20" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                        </div>
+                        <div class="p-3 d-flex flex-column text-center">S
+                            <input id="v-sustain" type="text" data-slider-min=0" data-slider-max="1" data-slider-step="0.01" data-slider-value="0" data-slider-orientation="vertical"/>
+                        </div>
+                        <div class="p-3 d-flex flex-column text-center">R
+                            <input id="v-release" type="text" data-slider-min="0." data-slider-max="200" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+
+            <ul class="piano mt-0 d-md-block text-secondary text-center">
+                <a class="btn btn-primary btn-slide-down" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
                 <li class="white C">Do</li>
                 <li class="black CS"></li>
                 <li class="white D">Ré</li>
@@ -73,7 +101,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         Attack :
-                        <input class="form-control sliderSettings" min="0.01" value="0.01" step="0.01" max="2" type="range" id="attack-input">
+                        <!-- <input class="form-control sliderSettings" min="0.01" value="0.01" step="0.01" max="2" type="range" id="attack-input"> -->
                     </div>
                 </div>
                 <div class="col-md-3">
@@ -118,6 +146,9 @@
 
     </main>
 
+    
+    
+
 
     <!-- Footer -->
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
@@ -136,6 +167,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
 
 </body>
 

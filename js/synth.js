@@ -13,6 +13,25 @@ let synth = new Tone.Synth({
     }
 }).toDestination();
 
+document.addEventListener('DOMContentLoaded', function(){ 
+
+    $("#attack-input").slider({
+        reversed : true
+    });
+    $("#v-decay").slider({
+        reversed : true
+    });
+    $("#v-sustain").slider({
+        reversed : true
+    });
+    $("#v-release").slider({
+        reversed : true
+    });
+
+}, false);
+
+
+
 window.addEventListener("load", () => {
     const sounds = document.querySelectorAll(".sound");
     const piano = document.querySelectorAll(".piano .white")
@@ -43,7 +62,7 @@ window.addEventListener("load", () => {
             setTimeout(() => {
                 this.classList.remove('active');
             }, 200);
-            createBubble(index);
+            // createBubble(index);
         });
     });
 
