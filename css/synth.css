@@ -1,20 +1,55 @@
 /* Synth */
 
-#collapseExample{
-    /* height: 18.875em; */
+#panel-setting{
     width: 34em;
     margin: 5em auto;
     user-select: none;
-    /* padding: 3em 0 0 3em; */
     position: relative;
     border: 1px solid #160801;
-    /* border-radius: 1em; */
-    /* background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png); */
+    background-image: url(../img/istockphoto-460230555-612x612.jpg);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)  
 }
 
+.piano-header{
+    height: 5em;
+    width: 34em;
+    margin: auto;
+    user-select: none;
+    padding: 3em 0 0 3em;
+    position: relative;
+    border: 1px solid #160801;
+    background-image: url(../img/istockphoto-460230555-612x612.jpg);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)  
+    
+   
+}
+
+[data-toggle="collapse"][aria-expanded="true"] .fa-chevron-down.animate
+{
+    -webkit-transform: rotate(180deg);
+    -moz-transform:    rotate(180deg);
+    -ms-transform:     rotate(180deg);
+    -o-transform:      rotate(180deg);
+    transform:         rotate(180deg);
+    transition: transform .3s;
+}
+
+[data-toggle="collapse"][aria-expanded="false"] .fa-chevron-down.animate
+{
+    -webkit-transform: rotate(0deg);
+    -moz-transform:    rotate(0deg);
+    -ms-transform:     rotate(0deg);
+    -o-transform:      rotate(0deg);
+    transform:         rotate(0deg);
+    transition: transform .3s;
+}
+
+
 .h200{
     height: 200px;
+}
+.h120{
+    height: 120px;
 }
 .slider.slider-vertical{
     height: 80px !important;
@@ -25,10 +60,20 @@
     z-index: 9;
     top: 0;
     right: 0;
+    opacity: .5;
+    
 }
 
+.btn-slide-down:hover{
+    opacity: 1;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
 ul {
-    height: 18.875em;
+    height: 16.2em;
     width: 34em;
     margin: 5em auto;
     user-select: none;
@@ -85,8 +130,8 @@ ul .white.active {
 }
 
 .D,
+.G,
 .E,
-.F,
 .A,
 .B {
     margin: 0 0 0 -1em
@@ -136,6 +181,12 @@ ul li:last-child {
     }
     ul .white{
         width: 13.3vw !important;
+    }
+    #panel-setting{
+        width: 92vw;
+    }
+    .piano-header{
+        width: 94vw;
     }
 
   }

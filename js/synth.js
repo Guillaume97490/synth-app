@@ -13,74 +13,45 @@ let synth = new Tone.Synth({
     }
 }).toDestination();
 
-document.addEventListener('DOMContentLoaded', function(){ 
-
-    $("#attack-input").slider({
-        reversed : true
-    });
-    $("#v-decay").slider({
-        reversed : true
-    });
-    $("#v-sustain").slider({
-        reversed : true
-    });
-    $("#v-release").slider({
-        reversed : true
-    });
-
-}, false);
-
-
-
 window.addEventListener("load", () => {
+
+    $("#attack-input").slider({reversed: true});
+    $("#decay-input").slider({reversed: true});
+    $("#sustain-input").slider({reversed: true});
+    $("#release-input").slider({reversed: true});
+    $("#count-input").slider({reversed: true});
+    $("#spread-input").slider({reversed: true});
+
     const sounds = document.querySelectorAll(".sound");
-    const piano = document.querySelectorAll(".piano .white")
-    const visual = document.querySelector(".visual");
-    const colors = [
-        "#60d394",
-        "#d36060",
-        "#c060d3",
-        "#d3d160",
-        "#606bd3",
-        "#60c2d3",
-        "#d39d60"
-    ];
+    const piano = document.querySelectorAll(".piano li")
+    const gamme = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
+
 
     $(".sliderSettings").change((e) => {
         setting = $(e.currentTarget).attr('id').split('-')[0];
         categorySetting = $(e.currentTarget).parents().parents().parents().attr('id');
+        console.log(categorySetting)
         synth[categorySetting][setting] = Number($(`#${setting}-input`).val());
     });
 
     $("#setting-reset").click(() => resetSynth());
     piano.forEach((key, index) => {
         key.addEventListener("click", function() {
-            gamme = ["C", "D", "E", "F", "G", "A", "B"];
+            // gamme = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"];
             synth.triggerAttackRelease(gamme[index] + '4', 0.5)
 
             this.classList.add('active');
             setTimeout(() => {
                 this.classList.remove('active');
             }, 200);
-            // createBubble(index);
         });
     });
 
 
-    const createBubble = index => {
-        const bubble = document.createElement("div");
-        visual.appendChild(bubble);
-        bubble.style.backgroundColor = colors[index];
-        bubble.style.animation = `jump 10s linear`;
-        bubble.addEventListener("animationend", function() {
-            visual.removeChild(this);
-        });
-    };
-
-
     let liste = [];
     let is_record = false;
-    let gammes = ["C", "D", "E", "F", "G", "A", "B"];
+    // let gammes = ["C", "D", "E", "F", "G", "A", "B"];
+    const gammeRecord = ["C", "CS", "D", "DS", "E", "F", "FS", "G", "GS", "A", "AS", "B"];
     document.querySelector("#record").onclick = () => {
         liste = [];
         document.querySelector('#record').classList.add('d-none');
@@ -98,7 +69,7 @@ window.addEventListener("load", () => {
                         liste.push({
                             son: sounds[index],
                             temps: temps,
-                            pad2: document.querySelector(`.${gammes[index]}`),
+                            pad2: document.querySelector(`.${gammeRecord[index]}`),
                         });
                     };
                 },
@@ -118,7 +89,6 @@ window.addEventListener("load", () => {
 
 
     document.querySelector("#play").onclick = () => {
-
 
         for (let i = 0; i < liste.length; i++) {
             const item = liste[i];
@@ -143,16 +113,23 @@ window.addEventListener("load", () => {
 
 
 document.onkeypress = function(e) {
-    shortcuts = ["a", "z", "e", "r", "t", "y", "u"];
-    gammes = ["C", "D", "E", "F", "G", "A", "B"];
+    shortcuts =         ["a",  "é", "z", '"',  "e", "r", "(",  "t", "-",  "y", "è",  "u"];
+    // gammes = ["C", "D", "E", "F", "G", "A", "B"];
+    const gammeRecord = ["C", "CS", "D", "DS", "E", "F", "FS", "G", "GS", "A", "AS", "B"];
 
     shortcuts.forEach((shortcut, i) => {
         if (e.key == shortcut) {
-            document.querySelector(`.white.${gammes[i]}`).click();
+            document.querySelector(`li.${gammeRecord[i]}`).click();
         };
     });
-
 };
+
+// document.onkeypress = function(e) {
+//     shortcuts = ["é", '"', "'", "r", "-", "è"];
+//     gammes = ["C", "D", "E", "F", "G", "A", "B"];
+// }
+
+
 
 resetSynth = () => {
     synth.oscillator.spread = 40;
@@ -161,10 +138,10 @@ resetSynth = () => {
     synth.envelope.decay = 1.6;
     synth.envelope.sustain = 0;
     synth.envelope.release = 1.6;
-    $("#attack-input").val(synth.envelope.attack);
-    $("#decay-input").val(synth.envelope.decay);
-    $("#sustain-input").val(synth.envelope.sustain);
-    $("#release-input").val(synth.envelope.release);
-    $("#count-input").val(synth.oscillator.count);
-    $("#spread-input").val(synth.oscillator.spread);
+    $('#attack-input').slider('refresh', { useCurrentValue: false });
+    $('#decay-input').slider('refresh', { useCurrentValue: false });
+    $('#sustain-input').slider('refresh', { useCurrentValue: false });
+    $('#release-input').slider('refresh', { useCurrentValue: false });
+    $('#count-input').slider('refresh', { useCurrentValue: false });
+    $('#spread-input').slider('refresh', { useCurrentValue: false });
 }

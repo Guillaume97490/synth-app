@@ -30,46 +30,65 @@
 
 
     <!-- Content -->
-    <main class="pt-5 text-white bg-dark" id="page-content">
+    <main class="pt-5 text-white bg-dark mt-3" id="page-content">
 
-        <!-- <div class="visual"></div> -->
 
-        
-       
-        <!-- Synth keys -->
         <div>
-            
-            <div class="collapse my-0" id="collapseExample">
-                <div class="form-group">Envelope
-                    <div class="h200 d-flex">
-                        <div class="p-3 d-flex flex-column text-center">A
-                            <input id="attack-input" class="sliderSettings" type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="0.01" data-slider-orientation="vertical"/>
+            <!-- syth settings -->
+            <div class="collapse my-0" id="panel-setting">
+                <div class="row form-group">
+                    <div id="envelope" class="border mt-3 mx-4 mr-md-4 col-md-5">
+                        <div class="col-12">Envelope</div>
+                        <div class="h120 d-flex">
+                            <div class="px-3 d-flex flex-column text-center">A
+                                <input id="attack-input" class="sliderSettings" type="text" data-slider-min="0.01" data-slider-max="2" data-slider-step="0.01" data-slider-value="0.01" data-slider-orientation="vertical"/>
+                            </div>
+                            <div class="px-3 d-flex flex-column text-center">D
+                                <input id="decay-input" class="sliderSettings" type="text" data-slider-min="0.01" data-slider-max="20" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                            </div>
+                            <div class="px-3 d-flex flex-column text-center">S
+                                <input id="sustain-input" class="sliderSettings" type="text" data-slider-min="0" data-slider-max="1" data-slider-step="0.01" data-slider-value="0" data-slider-orientation="vertical"/>
+                            </div>
+                            <div class="px-3 d-flex flex-column text-center">R
+                                <input id="release-input" class="sliderSettings" type="text" data-slider-min="0" data-slider-max="200" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                            </div>
                         </div>
-                        <div class="p-3 d-flex flex-column text-center">D
-                            <input id="v-decay" type="text" data-slider-min="0.01" data-slider-max="20" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                    </div>
+
+                    <div id="oscillator" class="border mt-3 mx-4 mr-md-0 col-md-5">
+                        <div class="col-12">Oscillator</div>
+                        <div class="h120 d-flex">
+                            <div class="px-3 d-flex flex-column text-center">C
+                                <input id="count-input" class="sliderSettings" type="text" data-slider-min="1" data-slider-max="10" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
+                            </div>
+
+                            <div class="px-3 d-flex flex-column text-center">S
+                                <input id="spread-input" class="sliderSettings" type="text" data-slider-min="0" data-slider-max="20000" data-slider-step="0.01" data-slider-value="40" data-slider-orientation="vertical"/>
+                            </div>
+
                         </div>
-                        <div class="p-3 d-flex flex-column text-center">S
-                            <input id="v-sustain" type="text" data-slider-min=0" data-slider-max="1" data-slider-step="0.01" data-slider-value="0" data-slider-orientation="vertical"/>
-                        </div>
-                        <div class="p-3 d-flex flex-column text-center">R
-                            <input id="v-release" type="text" data-slider-min="0." data-slider-max="200" data-slider-step="0.01" data-slider-value="1.6" data-slider-orientation="vertical"/>
-                        </div>
-    
                     </div>
                 </div>
+
             </div>
 
-            <ul class="piano mt-0 d-md-block text-secondary text-center">
-                <a class="btn btn-primary btn-slide-down" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    <i class="fas fa-chevron-down"></i>
+            <div class="piano-header">
+                <a class="text-white border-0 btn-slide-down p-2 collapsed" data-toggle="collapse" href="#panel-setting" role="button" aria-expanded="false" aria-controls="panel-setting">
+                    Settings<i class="pl-2 fas fa-chevron-down animate"></i>
                 </a>
+            </div>
+
+            <ul class="piano mt-0 pt-0 d-md-block text-secondary text-center">
+               
+
+                <!-- Synth keys -->
                 <li class="white C">Do</li>
                 <li class="black CS"></li>
                 <li class="white D">Ré</li>
                 <li class="black DS"></li>
                 <li class="white E">Mi</li>
-                <li class="black ES"></li>
                 <li class="white F">Fa</li>
+                <li class="black FS"></li>
                 <li class="white G">Sol</li>
                 <li class="black GS"></li>
                 <li class="white A">La</li>
@@ -94,52 +113,6 @@
             </div>
         </div>
 
-        <!-- syth settings -->
-        <div class="container">
-            <div id="envelope" class="row">
-                <div class="col-12">Envelope :</div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Attack :
-                        <!-- <input class="form-control sliderSettings" min="0.01" value="0.01" step="0.01" max="2" type="range" id="attack-input"> -->
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Decay :
-                        <input class="form-control sliderSettings custom-slider" min="0.01" value="1.6" step="0.01" max="20" type="range" id="decay-input">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Sustain :
-                        <input class="form-control sliderSettings" min="0" value="0" step="0.01" max="1" type="range" id="sustain-input">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Release :
-                        <input class="form-control sliderSettings" min="0" value="1.6" step="0.01" max="200" type="range" id="release-input">
-                    </div>
-                </div>
-            </div>
-
-            <div id="oscillator" class="row">
-                <div class="col-12">Oscillator :</div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Count :
-                        <input class="form-control sliderSettings" min="1" value="1.6" step="0.01" max="10" type="range" id="count-input">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        Spread :
-                        <input class="form-control sliderSettings" min="0" value="40" step="0.01" max="20000" type="range" id="spread-input">
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="text-center">
             <button id="setting-reset" class="btn btn-secondary">Réglage par defaut</button>
         </div>
@@ -151,7 +124,7 @@
 
 
     <!-- Footer -->
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <footer id="sticky-footer" class="py-2 bg-dark text-white-50">
         <div class="container text-center">
             <small>Copyright - Guillaume &copy; </small>
         </div>
