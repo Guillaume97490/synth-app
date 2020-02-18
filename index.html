@@ -36,8 +36,8 @@
         <div>
             <!-- syth settings -->
             <div class="collapse my-0" id="panel-setting">
-                <div class="row form-group">
-                    <div id="envelope" class="border mt-3 mx-4 mr-md-4 col-md-5">
+                <div id="panel-setting-inner" class="row form-group pb-3">
+                    <div id="envelope" class="border mt-3 mx-4 mr-md-4 col-md-6">
                         <div class="col-12">Envelope</div>
                         <div class="h120 d-flex">
                             <div class="px-3 d-flex flex-column text-center">A
@@ -55,7 +55,7 @@
                         </div>
                     </div>
 
-                    <div id="oscillator" class="border mt-3 mx-4 mr-md-0 col-md-5">
+                    <div id="oscillator" class="border mt-3 mx-4 mr-md-0 ml-md-0 col-md-4">
                         <div class="col-12">Oscillator</div>
                         <div class="h120 d-flex">
                             <div class="px-3 d-flex flex-column text-center">C
@@ -68,6 +68,24 @@
 
                         </div>
                     </div>
+
+                    <!-- Actions -->
+                    <div class="container pt-2">
+                        <div class="row text-center">
+                            <div class="col-lg-4">
+                                <button class="bg-dark box-shadow-action-btn mb-2 btn col-4" id="record"><i class="fas text-danger fa-circle"></i></button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="bg-dark box-shadow-action-btn mb-2 btn d-none col-4" id="stop"><i class="fas text-white fa-square"></i></button>
+                            </div>
+                            <div class="col-lg-4">
+                                <button class="bg-dark box-shadow-action-btn mb-2 btn d-none col-4" id="play"><i class="fas text-success fa-play"></i></button>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
 
             </div>
@@ -78,7 +96,7 @@
                 </a>
             </div>
 
-            <ul class="piano mt-0 pt-0 d-md-block text-secondary text-center">
+            <ul class="piano mt-0 d-md-block text-secondary text-center">
                
 
                 <!-- Synth keys -->
@@ -97,21 +115,7 @@
             </ul>
         </div>
 
-        <!-- Actions -->
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-lg-4">
-                    <button class="btn-warning mb-2 btn col-4" id="record">Enregistrer</button>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn-danger mb-2 btn d-none col-4" id="stop">Arreter</button>
-                </div>
-                <div class="col-lg-4">
-                    <button class="btn-success mb-2 btn d-none col-4" id="play">Lire</button>
-                </div>
-
-            </div>
-        </div>
+        
 
         <div class="text-center">
             <button id="setting-reset" class="btn btn-secondary">Réglage par defaut</button>
@@ -121,15 +125,12 @@
 
     
     
-
-
     <!-- Footer -->
     <footer id="sticky-footer" class="py-2 bg-dark text-white-50">
         <div class="container text-center">
             <small>Copyright - Guillaume &copy; </small>
         </div>
     </footer>
-
 
 
 

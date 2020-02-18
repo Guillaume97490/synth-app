@@ -6,21 +6,30 @@
     user-select: none;
     position: relative;
     border: 1px solid #160801;
+    background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)  
+}
+#panel-setting-inner{
+    width: 28em;
+    margin: auto;
+    user-select: none;
+    position: relative;
+    border: 1px solid #160801;
     background-image: url(../img/istockphoto-460230555-612x612.jpg);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)  
 }
 
 .piano-header{
-    height: 5em;
-    width: 34em;
+    height: 4.05em;
+    width: 28em;
     margin: auto;
     user-select: none;
     padding: 3em 0 0 3em;
     position: relative;
     border: 1px solid #160801;
     background-image: url(../img/istockphoto-460230555-612x612.jpg);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)  
-    
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5);
+    z-index: 99;
    
 }
 
@@ -55,6 +64,10 @@
     height: 80px !important;
 }
 
+.box-shadow-action-btn{
+    box-shadow: 0px 0px 6px black;
+}
+
 .btn-slide-down{
     position: absolute;
     z-index: 9;
@@ -73,7 +86,7 @@
 
 
 ul {
-    height: 16.2em;
+    height: 20.2em;
     width: 34em;
     margin: 5em auto;
     user-select: none;
@@ -82,7 +95,9 @@ ul {
     border: 1px solid #160801;
     border-radius: 0 0 1em 1em;
     background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5)
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding-top: 66px;
+    transform: translateY(-65px);
 }
 
 li {
@@ -110,7 +125,7 @@ ul .white.active {
     border-left: 1px solid #999;
     border-bottom: 1px solid #999;
     box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%)
+    background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
 }
 
 .black {
@@ -121,12 +136,13 @@ ul .white.active {
     border: 1px solid #000;
     border-radius: 0 0 3px 3px;
     box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(45deg, #222 0%, #555 100%)
+    background: linear-gradient(45deg, #222 0%, #555 100%);
 }
 
-.black:active {
+.black:active,
+.black.active {
     box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 1px 2px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, #444 0%, #222 100%)
+    background: linear-gradient(to right, #444 0%, #222 100%);
 }
 
 .D,
@@ -183,6 +199,10 @@ ul li:last-child {
         width: 13.3vw !important;
     }
     #panel-setting{
+        width: 92vw;
+        box-shadow: 0;
+    }
+    #panel-setting-inner{
         width: 92vw;
     }
     .piano-header{
