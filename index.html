@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./css/synth.css">
-    <link rel="stylesheet" href="./css/settings.css">
+    <!-- <link rel="stylesheet" href="./css/settings.css"> -->
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -73,13 +73,13 @@
                     <div class="container pt-2">
                         <div class="row text-center">
                             <div class="col-lg-4">
-                                <button class="bg-dark box-shadow-action-btn mb-2 btn col-4" id="record"><i class="fas text-danger fa-circle"></i></button>
+                                <button class="bg-dark d-flex justify-content-center m-auto box-shadow-action-btn mb-2 btn col-4" id="record"><i class="fas text-danger fa-circle"></i></button>
                             </div>
                             <div class="col-lg-4">
-                                <button class="bg-dark box-shadow-action-btn mb-2 btn d-none col-4" id="stop"><i class="fas text-white fa-square"></i></button>
+                                <button class="bg-dark d-flex justify-content-center m-auto box-shadow-action-btn mb-2 btn hidden col-4" id="stop"><i class="fas text-white fa-square"></i></button>
                             </div>
                             <div class="col-lg-4">
-                                <button class="bg-dark box-shadow-action-btn mb-2 btn d-none col-4" id="play"><i class="fas text-success fa-play"></i></button>
+                                <button class="bg-dark d-flex justify-content-center m-auto box-shadow-action-btn mb-2 btn hidden col-4" id="play"><i class="fas text-success fa-play"></i></button>
                             </div>
 
                         </div>
@@ -96,22 +96,22 @@
                 </a>
             </div>
 
-            <ul class="piano mt-0 d-md-block text-secondary text-center">
+            <ul id="piano" class="piano mt-0 d-md-block text-secondary text-center">
                
 
                 <!-- Synth keys -->
-                <li class="white C">Do</li>
-                <li class="black CS"></li>
-                <li class="white D">Ré</li>
-                <li class="black DS"></li>
-                <li class="white E">Mi</li>
-                <li class="white F">Fa</li>
-                <li class="black FS"></li>
-                <li class="white G">Sol</li>
-                <li class="black GS"></li>
-                <li class="white A">La</li>
-                <li class="black AS"></li>
-                <li class="white B">Si</li>
+                <li data-note="C4" class="white C">Do</li>
+                <li data-note="C#4" class="black CS"></li>
+                <li data-note="D4" class="white D">Ré</li>
+                <li data-note="D#4" class="black DS"></li>
+                <li data-note="E4" class="white E">Mi</li>
+                <li data-note="F4" class="white F">Fa</li>
+                <li data-note="F#4" class="black FS"></li>
+                <li data-note="G4" class="white G">Sol</li>
+                <li data-note="G#4" class="black GS"></li>
+                <li data-note="A4" class="white A">La</li>
+                <li data-note="A#4" class="black AS"></li>
+                <li data-note="B4" class="white B">Si</li>
             </ul>
         </div>
 
@@ -137,6 +137,7 @@
     <!-- Optional JavaScript -->
     <script src="./js/tone.js"></script>
     <script src="./js/synth.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
