@@ -168,6 +168,25 @@ ul li:first-child {
 ul li:last-child {
     border-radius: 0 5px 5px 5px
 }
+.rs-control .rs-range-color {
+    background-color: #f06a54;
+}
+.rs-control .rs-path-color {
+    background-color: #727272;
+}
+.rs-control .rs-handle {
+    background-color: #ffffff;
+}
+.rs-control .rs-bg-color {
+    background-color: #ffffff;
+}
+.rs-border{
+    border: 0px solid #aaa !important;
+}
+
+.hotkey{
+    pointer-events: none;
+}
 
 
 /* Visual */

@@ -19,7 +19,52 @@ window.addEventListener("load", () => {
         mouse_IsDown = true;
         if (Tone.context.state !== 'running') {
         
-    }})
+        }
+      })
+
+
+    $("#slider1").roundSlider({
+      handleShape: "round",
+      width: 15,
+      radius: 30,
+      value: 3,
+      sliderType: "min-range",
+      lineCap: "square",
+      mouseScrollAction: true,
+      min: 1,
+      max: "10",
+      step: "0.01",
+      showTooltip: false,
+
+      change: function (args) {
+        synth.oscillator.count = args.value;
+      }
+    });
+
+
+    $("#slider2").roundSlider({
+      handleShape: "round",
+      width: 15,
+      radius: 30,
+      value: 40,
+      sliderType: "min-range",
+      lineCap: "square",
+      mouseScrollAction: true,
+      min: 0,
+      max: "20000",
+      step: "0.01",
+      showTooltip: false,
+
+      change: function (args) {
+        synth.oscillator.spread = args.value;
+      }
+    });
+
+    
+
+
+
+
 
     $("#attack-input").slider({reversed: true});
     $("#decay-input").slider({reversed: true});
@@ -34,7 +79,6 @@ window.addEventListener("load", () => {
     $(".sliderSettings").change((e) => {
         setting = $(e.currentTarget).attr('id').split('-')[0];
         categorySetting = $(e.currentTarget).parents().parents().parents().attr('id');
-        console.log(categorySetting)
         synth[categorySetting][setting] = Number($(`#${setting}-input`).val());
     });
 
@@ -42,9 +86,14 @@ window.addEventListener("load", () => {
     $("#setting-reset").click(() => resetSynth());
 
     piano.addEventListener("touchstart", e => {
-      Tone.context.resume().then(() => {
-        synth.triggerAttack(e.target.dataset.note, Tone.context.currentTime)
-      });
+      let audioContext = true;
+      if (audioContext){
+        Tone.context.resume().then(() => {
+          synth.triggerAttack(e.target.dataset.note);
+          audioContext = false;
+        });
+
+      }
       $(`[data-note='${e.target.dataset.note}']`).addClass('active').click();
       e.stopPropagation();
       e.preventDefault(); 
@@ -109,7 +158,7 @@ window.addEventListener("load", () => {
 
 
     document.querySelector("#play").onclick = () => {
-        console.log(liste)
+        // console.log(liste)
 
         for (let i = 0; i < liste.length; i++) {
             const item = liste[i];
@@ -235,4 +284,6 @@ resetSynth = () => {
     $('#release-input').slider('refresh', { useCurrentValue: false });
     $('#count-input').slider('refresh', { useCurrentValue: false });
     $('#spread-input').slider('refresh', { useCurrentValue: false });
+    $("#slider1").roundSlider({value:3})
+    $("#slider2").roundSlider({value:40})
 }
