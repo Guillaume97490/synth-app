@@ -7,12 +7,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="./assets/css/styles.css"/>
+    <link rel="stylesheet" href="./assets/knobKnob/knobKnob.css"/>
+
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
     <link rel="stylesheet" href="./css/synth.css">
-    <!-- <link rel="stylesheet" href="./css/settings.css"> -->
     <link rel="stylesheet" href="./css/style.css">
+
+
+    
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -100,18 +107,51 @@
                
 
                 <!-- Synth keys -->
-                <li data-note="C4" class="white C">Do</li>
-                <li data-note="C#4" class="black CS"></li>
-                <li data-note="D4" class="white D">Ré</li>
-                <li data-note="D#4" class="black DS"></li>
-                <li data-note="E4" class="white E">Mi</li>
-                <li data-note="F4" class="white F">Fa</li>
-                <li data-note="F#4" class="black FS"></li>
-                <li data-note="G4" class="white G">Sol</li>
-                <li data-note="G#4" class="black GS"></li>
-                <li data-note="A4" class="white A">La</li>
-                <li data-note="A#4" class="black AS"></li>
-                <li data-note="B4" class="white B">Si</li>
+                <li data-note="C4" class="white C d-flex flex-column justify-content-between">
+                    <span class="">Do</span>
+                    <span class="hotkey text-secondary font-weight-bold">A</span>
+                </li>
+
+                <li data-note="C#4" class="black CS d-flex flex-column justify-content-end pb-2">é</li>
+
+                <li data-note="D4" class="white D d-flex flex-column justify-content-between">
+                    <span>Ré</span>
+                    <span class="hotkey text-secondary font-weight-bold">Z</span>
+                </li>
+
+                <li data-note="D#4" class="black DS d-flex flex-column justify-content-end pb-2">"</li>
+
+                <li data-note="E4" class="white E d-flex flex-column justify-content-between">
+                    <span>Mi</span>
+                    <span class="hotkey text-secondary font-weight-bold">E</span>
+                </li>
+
+                <li data-note="F4" class="white F d-flex flex-column justify-content-between">
+                    <span>Fa</span>
+                    <span class="hotkey text-secondary font-weight-bold">R</span>
+                </li>
+
+                <li data-note="F#4" class="black FS d-flex flex-column justify-content-end pb-2">'</li>
+
+                <li data-note="G4" class="white G d-flex flex-column justify-content-between">
+                    <span>Sol</span>
+                    <span class="hotkey text-secondary font-weight-bold">T</span>
+                </li>
+
+                <li data-note="G#4" class="black GS d-flex flex-column justify-content-end pb-2">(</li>
+
+                <li data-note="A4" class="white A d-flex flex-column justify-content-between">
+                    <span>La</span>
+                    <span class="hotkey text-secondary font-weight-bold">Y</span>
+                </li>
+
+                <li data-note="A#4" class="black AS d-flex flex-column justify-content-end pb-2">-</li>
+
+                <li data-note="B4" class="white B d-flex flex-column justify-content-between">
+                    <span>Si</span>
+                    <span class="hotkey text-secondary font-weight-bold">U</span>
+                </li>
+
             </ul>
         </div>
 
@@ -122,6 +162,14 @@
         </div>
 
     </main>
+
+    <section id="main">
+			
+        <div id="bars">
+            <div id="control"></div>
+        </div>
+        
+    </section>
 
     
     
@@ -135,14 +183,17 @@
 
 
     <!-- Optional JavaScript -->
-    <script src="./js/tone.js"></script>
-    <script src="./js/synth.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.4.4/mobile-detect.min.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" crossorigin="anonymous"></script>
+    <script src="./js/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.min.js"></script>
+    <script src="./js/tone.js"></script>
+    <script src="./js/synth.js"></script>
+
+    <script src="./assets/knobKnob/transform.js"></script>
+    <script src="./assets/knobKnob/knobKnob.jquery.js"></script>
+    <script src="./assets/js/script.js"></script>
 
 </body>
 

@@ -12,8 +12,14 @@ let synth = new Tone.Synth({
         "release": 1.6
     }
 }).toDestination();
-
 window.addEventListener("load", () => {
+    Tone.context.resume();
+    document.documentElement.addEventListener(
+      "mousedown", function(){
+        mouse_IsDown = true;
+        if (Tone.context.state !== 'running') {
+        
+    }})
 
     $("#attack-input").slider({reversed: true});
     $("#decay-input").slider({reversed: true});
@@ -33,21 +39,22 @@ window.addEventListener("load", () => {
     });
 
 
-
     $("#setting-reset").click(() => resetSynth());
 
-
-    
     piano.addEventListener("touchstart", e => {
-      synth.triggerAttack(e.target.dataset.note);
-      e.stopPropagation(); 
+      Tone.context.resume().then(() => {
+        synth.triggerAttack(e.target.dataset.note, Tone.context.currentTime)
+      });
+      $(`[data-note='${e.target.dataset.note}']`).addClass('active').click();
+      e.stopPropagation();
       e.preventDefault(); 
     });
 
     piano.addEventListener("touchend", e => {
+      synth.triggerRelease();
+      $(`[data-note='${e.target.dataset.note}']`).removeClass('active');
       e.stopPropagation(); 
       e.preventDefault(); 
-      synth.triggerRelease();
   });
 
 
