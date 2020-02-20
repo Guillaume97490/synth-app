@@ -173,13 +173,12 @@ window.addEventListener("load", () => {
                 synth.triggerAttack(item.pad2.dataset.note);
                 setTimeout(() => {
                     item.pad2.classList.remove('active');
+                    synth.triggerRelease();
                   }, 100);
                   
-
             }, delay);
 
         };
-        synth.triggerRelease();
     };
 });
 
